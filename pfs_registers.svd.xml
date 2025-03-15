@@ -1,0 +1,438 @@
+<root>
+ <name>PFS</name>
+ <description>Control Register</description>
+ <baseAddress>0x40080800</baseAddress>
+ <registers>
+  <register>
+   <dim>8</dim>
+   <dimIncrement>0x4</dimIncrement>
+   <dimIndex>0-7</dimIndex>
+   <name>P00%sPFS</name>
+   <description>Port 00%s Pin Function Select Register</description>
+   <addressOffset>0x0</addressOffset>
+   <size>0x20</size>
+   <access>read-write</access>
+   <resetValue>0x00000000</resetValue>
+   <resetMask>0xFFFFFFFD</resetMask>
+   <fields>
+    <field>
+     <name>PODR</name>
+     <description>Port Output Data</description>
+     <lsb>0</lsb>
+     <msb>0</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Output low</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output high</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PIDR</name>
+     <description>Port State</description>
+     <lsb>1</lsb>
+     <msb>1</msb>
+     <access>read-only</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Low level</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>High level</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PDR</name>
+     <description>Port Direction</description>
+     <lsb>2</lsb>
+     <msb>2</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Input (functions as an input pin)</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output (functions as an output pin)</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PCR</name>
+     <description>Pull-up Control</description>
+     <lsb>4</lsb>
+     <msb>4</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Disable input pull-up</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Enable input pull-up</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>NCODR</name>
+     <description>N-Channel Open-Drain Control</description>
+     <lsb>6</lsb>
+     <msb>6</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Output CMOS</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output NMOS open-drain</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>ISEL</name>
+     <description>IRQ Input Enable</description>
+     <lsb>14</lsb>
+     <msb>14</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Do not use as IRQn input pin</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Use as IRQn input pin</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>ASEL</name>
+     <description>Analog Input Enable</description>
+     <lsb>15</lsb>
+     <msb>15</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Do not use as analog pin</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Use as analog pin</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PMR</name>
+     <description>Port Mode Control</description>
+     <lsb>16</lsb>
+     <msb>16</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Use as general I/O pin</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Use as I/O port for peripheral functions</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PSEL</name>
+     <description>Peripheral Select</description>
+     <lsb>24</lsb>
+     <msb>28</msb>
+     <access>read-write</access>
+    </field>
+   </fields>
+  </register>
+  <register>
+   <dim>8</dim>
+   <dimIncrement>0x4</dimIncrement>
+   <dimIndex>0-7</dimIndex>
+   <name>P00%sPFS_HA</name>
+   <description>Port 00%s Pin Function Select Register</description>
+   <alternateRegister>P00%sPFS</alternateRegister>
+   <addressOffset>0x2</addressOffset>
+   <size>0x10</size>
+   <access>read-write</access>
+   <resetValue>0x00000000</resetValue>
+   <resetMask>0x0000FFFD</resetMask>
+   <fields>
+    <field>
+     <name>PODR</name>
+     <description>Port Output Data</description>
+     <lsb>0</lsb>
+     <msb>0</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Output low</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output high</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PIDR</name>
+     <description>Port State</description>
+     <lsb>1</lsb>
+     <msb>1</msb>
+     <access>read-only</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Low level</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>High level</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PDR</name>
+     <description>Port Direction</description>
+     <lsb>2</lsb>
+     <msb>2</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Input (functions as an input pin)</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output (functions as an output pin)</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PCR</name>
+     <description>Pull-up Control</description>
+     <lsb>4</lsb>
+     <msb>4</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Disable input pull-up</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Enable input pull-up</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>NCODR</name>
+     <description>N-Channel Open-Drain Control</description>
+     <lsb>6</lsb>
+     <msb>6</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Output CMOS</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output NMOS open-drain</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>ISEL</name>
+     <description>IRQ Input Enable</description>
+     <lsb>14</lsb>
+     <msb>14</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Do not use as IRQn input pin</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Use as IRQn input pin</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>ASEL</name>
+     <description>Analog Input Enable</description>
+     <lsb>15</lsb>
+     <msb>15</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Do not use as analog pin</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Use as analog pin</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+   </fields>
+  </register>
+  <register>
+   <dim>8</dim>
+   <dimIncrement>0x4</dimIncrement>
+   <dimIndex>0-7</dimIndex>
+   <name>P00%sPFS_BY</name>
+   <description>Port 00%s Pin Function Select Register</description>
+   <alternateRegister>P00%sPFS</alternateRegister>
+   <addressOffset>0x3</addressOffset>
+   <size>0x8</size>
+   <access>read-write</access>
+   <resetValue>0x00000000</resetValue>
+   <resetMask>0x000000FD</resetMask>
+   <fields>
+    <field>
+     <name>PODR</name>
+     <description>Port Output Data</description>
+     <lsb>0</lsb>
+     <msb>0</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Output low</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output high</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PIDR</name>
+     <description>Port State</description>
+     <lsb>1</lsb>
+     <msb>1</msb>
+     <access>read-only</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Low level</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>High level</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PDR</name>
+     <description>Port Direction</description>
+     <lsb>2</lsb>
+     <msb>2</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Input (functions as an input pin)</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output (functions as an output pin)</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>PCR</name>
+     <description>Pull-up Control</description>
+     <lsb>4</lsb>
+     <msb>4</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Disable input pull-up</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Enable input pull-up</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+    <field>
+     <name>NCODR</name>
+     <description>N-Channel Open-Drain Control</description>
+     <lsb>6</lsb>
+     <msb>6</msb>
+     <access>read-write</access>
+     <enumeratedValues>
+      <enumeratedValue>
+       <name>0</name>
+       <description>Output CMOS</description>
+       <value>0</value>
+      </enumeratedValue>
+      <enumeratedValue>
+       <name>1</name>
+       <description>Output NMOS open-drain</description>
+       <value>1</value>
+      </enumeratedValue>
+     </enumeratedValues>
+    </field>
+   </fields>
+  </register>
+ </registers>
+</root>
